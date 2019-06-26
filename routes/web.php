@@ -39,3 +39,7 @@ Route::get('/get/{nim}', 'AbpController@getMahasiswa')->middleware([
 Route::get('/mahalama', function () {
     return redirect('/mahasiswa/12345')->with('pesan', 'Mahalama sudah tidak ada');
 })->middleware('web');
+
+
+Route::get('/students', 'MahasiswaController@showAll');
+Route::get('/students/{nim}', 'MahasiswaController@showMahasiswa')->name('students.detail');
