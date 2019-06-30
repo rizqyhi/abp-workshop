@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\SimpanMahasiswaRequest;
 
 class MahasiswaController extends Controller
 {
@@ -42,5 +43,18 @@ class MahasiswaController extends Controller
         return view('mahasiswa_detail', [
             'mahasiswa' => $mahasiswa
         ]);
+    }
+
+    public function showAdd()
+    {
+        return view('mahasiswa_add');
+    }
+
+    public function simpan(SimpanMahasiswaRequest $request)
+    {
+        $pesan = 'Mahasiswa dengan nama '.$request->nama.' berhasil disimpan!';
+
+        return redirect('/students')->with('pesan', $pesan);
+        // return response('data berhasil disimpan);
     }
 }

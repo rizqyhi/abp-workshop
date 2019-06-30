@@ -43,3 +43,6 @@ Route::get('/mahalama', function () {
 
 Route::get('/students', 'MahasiswaController@showAll');
 Route::get('/students/{nim}', 'MahasiswaController@showMahasiswa')->name('students.detail');
+
+Route::get('/students_add', 'MahasiswaController@showAdd');
+Route::post('/students_add', 'MahasiswaController@simpan');

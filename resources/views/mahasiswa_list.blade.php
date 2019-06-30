@@ -1,6 +1,10 @@
 @extends('layout')
 
 @section('content')
+@if (session('pesan'))
+    <div class="alert alert-success">{{ session('pesan') }}</div>
+@endif
+
 <table class="table table-striped">
     <thead>
         <tr>
