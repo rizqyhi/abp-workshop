@@ -41,6 +41,16 @@
                     @enderror
                 </div>
 
+                <div class="form-group">
+                    <label for="address">Alamat</label>
+                    <textarea class="form-control" name="address">
+                        {{ old('address') }}
+                    </textarea>
+                    @error('address')
+                        {{ $message }}
+                    @enderror
+                </div>
+
                 <button type="submit" class="btn btn-success">Simpan Mahasiswa</button>
             </form>
         </div>

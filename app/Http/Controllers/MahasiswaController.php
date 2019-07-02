@@ -61,6 +61,7 @@ class MahasiswaController extends Controller
         $student->nim = $request->nim;
         $student->nama = $request->nama;
         $student->angkatan = $request->angkatan;
+        $student->address = $request->address;
         $student->save();
 
         $pesan = 'Mahasiswa dengan nama '.$request->nama.' berhasil disimpan!';

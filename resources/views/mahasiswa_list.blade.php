@@ -11,6 +11,7 @@
             <th>NIM</th>
             <th>Nama</th>
             <th>Angkatan</th>
+            <th>Alamat</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
             </td>
             <td>{{ $m->nama }}</td>
             <td>{{ $m->angkatan }}</td>
+            <td>{{ $m->address }}</td>
             </td>
         </tr>
         @endforeach

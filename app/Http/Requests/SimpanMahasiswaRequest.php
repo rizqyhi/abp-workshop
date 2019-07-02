@@ -27,7 +27,8 @@ class SimpanMahasiswaRequest extends FormRequest
         return [
             'nim' => 'required|digits:3',
             'nama' => 'required|min:3',
-            'angkatan' => ['required', 'integer', new AngkatanMin]
+            'angkatan' => ['required', 'integer', new AngkatanMin],
+            'address' => 'required',
         ];
     }
 }
