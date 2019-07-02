@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\SimpanMahasiswaRequest;
+use App\Student;
 
 class MahasiswaController extends Controller
 {
@@ -26,9 +28,12 @@ class MahasiswaController extends Controller
         //     'mahasiswa' => $this->mahasiswa
         // ]);
 
+        // $mahasiswa = DB::table('students')->get();
+        $mahasiswa = Student::all();
+
         return view('mahasiswa_list')
             ->with([
-                'mahasiswa' => $this->mahasiswa
+                'mahasiswa' => $mahasiswa
             ]);
     }
 
@@ -52,6 +57,12 @@ class MahasiswaController extends Controller
 
     public function simpan(SimpanMahasiswaRequest $request)
     {
+        $student = new Student;
+        $student->nim = $request->nim;
+        $student->nama = $request->nama;
+        $student->angkatan = $request->angkatan;
+        $student->save();
+
         $pesan = 'Mahasiswa dengan nama '.$request->nama.' berhasil disimpan!';
 
         return redirect('/students')->with('pesan', $pesan);

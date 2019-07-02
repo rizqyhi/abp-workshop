@@ -17,10 +17,11 @@
         @foreach ($mahasiswa as $m)
         <tr>
             <td>
-                <a href="{{ route('students.detail', $m['nim']) }}">{{ $m['nim'] }}</a>
+                <a href="{{ route('students.detail', $m->nim) }}">{{ $m->nim }}</a>
             </td>
-            <td>{{ $m['nama'] }}</td>
-            <td>{{ $m['angkatan'] }}</td>
+            <td>{{ $m->nama }}</td>
+            <td>{{ $m->angkatan }}</td>
+            </td>
         </tr>
         @endforeach
     </tbody>
