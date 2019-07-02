@@ -46,3 +46,5 @@ Route::get('/students/{nim}', 'MahasiswaController@showMahasiswa')->name('studen
 
 Route::get('/students_add', 'MahasiswaController@showAdd');
 Route::post('/students_add', 'MahasiswaController@simpan');
+
+Route::get('/image/{filename}', 'ImageController@sendFile');
