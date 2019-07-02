@@ -8,6 +8,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>Avatar</th>
             <th>NIM</th>
             <th>Nama</th>
             <th>Angkatan</th>
@@ -18,6 +19,7 @@
     <tbody>
         @foreach ($mahasiswa as $m)
         <tr>
+            <td><img src="{{ Storage::disk('s3')->url('avatars/'.$m->avatar) }}" alt="" width="64"></td>
             <td>
                 <a href="{{ route('students.detail', $m->nim) }}">{{ $m->nim }}</a>
             </td>

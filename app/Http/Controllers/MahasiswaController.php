@@ -57,11 +57,21 @@ class MahasiswaController extends Controller
 
     public function simpan(SimpanMahasiswaRequest $request)
     {
+        // Simpan di disk local
+        // $request->file('avatar')->store('avatars');
+
+        // Simpan di disk public
+        // $request->file('avatar')->store('avatars', 'public');
+
+        // Simpan di disk public
+        $request->file('avatar')->store('avatars', 's3');
+
         $student = new Student;
         $student->nim = $request->nim;
         $student->nama = $request->nama;
         $student->angkatan = $request->angkatan;
         $student->address = $request->address;
+        $student->avatar = $request->file('avatar')->hashName();
         $student->save();
 
         $pesan = 'Mahasiswa dengan nama '.$request->nama.' berhasil disimpan!';

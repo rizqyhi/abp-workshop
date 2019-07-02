@@ -14,7 +14,7 @@
                 </div>
             @endif
 
-            <form action="/students_add" method="POST">
+            <form action="/students_add" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">
@@ -49,6 +49,11 @@
                     @error('address')
                         {{ $message }}
                     @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="avatar">Upload Foto</label>
+                    <input type="file" class="form-control" name="avatar">
                 </div>
 
                 <button type="submit" class="btn btn-success">Simpan Mahasiswa</button>
