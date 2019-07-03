@@ -48,3 +48,7 @@ Route::get('/students_add', 'MahasiswaController@showAdd');
 Route::post('/students_add', 'MahasiswaController@simpan');
 
 Route::get('/image/{filename}', 'ImageController@sendFile');
+
+// Email subscribe
+Route::get('/subscribe', 'EmailController@showForm');
+Route::post('/subscribe', 'EmailController@subscribe');
