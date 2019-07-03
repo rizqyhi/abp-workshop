@@ -28,6 +28,11 @@ class SubscribeEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.subscribe');
+        // Menggunakan view biasa
+        // return $this->view('emails.subscribe');
+
+
+        // Menggunakan view markdown
+        return $this->markdown('emails.subscribe_markdown');
     }
 }
