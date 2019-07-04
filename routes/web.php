@@ -55,3 +55,4 @@ Route::post('/subscribe', 'EmailController@subscribe');
 
 // HTTP API
 Route::get('/api_users', 'ApiController@showUsers');
+Route::get('/api_users_guzzle', 'ApiController@showUsersGuzzle');
