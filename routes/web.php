@@ -52,3 +52,6 @@ Route::get('/image/{filename}', 'ImageController@sendFile');
 // Email subscribe
 Route::get('/subscribe', 'EmailController@showForm');
 Route::post('/subscribe', 'EmailController@subscribe');
+
+// HTTP API
+Route::get('/api_users', 'ApiController@showUsers');
