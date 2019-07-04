@@ -56,3 +56,7 @@ Route::post('/subscribe', 'EmailController@subscribe');
 // HTTP API
 Route::get('/api_users', 'ApiController@showUsers');
 Route::get('/api_users_guzzle', 'ApiController@showUsersGuzzle');
+
+// Using Azure Cognitive service
+Route::get('/translate', 'AzureController@translate');
+Route::post('/translate', 'AzureController@processTranslate');
