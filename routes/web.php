@@ -60,3 +60,7 @@ Route::get('/api_users_guzzle', 'ApiController@showUsersGuzzle');
 // Using Azure Cognitive service
 Route::get('/translate', 'AzureController@translate');
 Route::post('/translate', 'AzureController@processTranslate');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
